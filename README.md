@@ -1,6 +1,6 @@
 # React + Vite
 
-# -> https://vitejs.dev/
+[here](https://vitejs.dev/).
 
 CSS
 
