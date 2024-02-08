@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color-theme: #fff; /* Default value */
+  --text-color-theme: #1d232a; /* Default value */
+  --PaperBg-color-theme: #2a323c;
+  --InputBgcolor-color-theme: #2a323c;
+}
+
+body {
+  font-weight: 400;
+  background-color: var(--background-color-theme);
+  color: var(--text-color-theme);
+}
+
+bodyfont {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.Paper_Contents {
+  background-color: var(--PaperBg-color-theme);
+  margin: 1px;
+  padding: 4px;
+}
+
+input {
+  background-color: var(--Input-color-theme);
+}
