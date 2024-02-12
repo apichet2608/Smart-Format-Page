@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { useTheme } from "../src/Components/common/Theme/ThemeContext/ThemeContext"; // Import the custom hook from ThemeContex
-import { Box } from "@mui/material";
+// import { Box } from "@mui/material";
 import AppBarComponent from "./Components/common/Appbar/AppBarComponent";
 import DrawerComponent from "./Components/common/Appbar/Drawer_mini/DrawerComponent";
 import MainContent from "./Components/common/Appbar/Drawer_mini/MainContent";
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Box style={{ display: "flex" }}>
+      <div style={{ display: "flex" }}>
         <AppBarComponent
           open={open}
           handleDrawerOpen={handleDrawerOpen}
@@ -31,7 +31,7 @@ function App() {
           isDarkMode={isDarkMode}
         />
         <MainContent open={open} />
-      </Box>
+      </div>
     </>
   );
 }

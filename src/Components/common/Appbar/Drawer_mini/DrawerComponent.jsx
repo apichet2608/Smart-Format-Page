@@ -81,24 +81,26 @@ export default function DrawerComponent({
   }, [location.pathname]);
 
   return (
-    <Drawer variant="permanent" open={open}>
-      <DrawerHeader>
-        <IconButton onClick={handleDrawerClose}>
-          {theme.direction === "rtl" ? (
-            <ChevronRightIcon />
-          ) : (
-            <ChevronLeftIcon />
-          )}
-        </IconButton>
-      </DrawerHeader>
-      <Divider />
-      <Navbuttton
-        open={open}
-        sidebarItems={sidebarItems_report()}
-        handleButtonClick={handleButtonClick}
-        activeButton={activeButton}
-        isDarkMode={isDarkMode}
-      />
-    </Drawer>
+    <div>
+      <Drawer variant="permanent" open={open}>
+        <DrawerHeader>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "rtl" ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
+        <Navbuttton
+          open={open}
+          sidebarItems={sidebarItems_report()}
+          handleButtonClick={handleButtonClick}
+          activeButton={activeButton}
+          isDarkMode={isDarkMode}
+        />
+      </Drawer>
+    </div>
   );
 }

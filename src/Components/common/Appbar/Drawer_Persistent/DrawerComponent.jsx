@@ -14,7 +14,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { NavLink, useLocation } from "react-router-dom";
 import Navbuttton from "../Button/Navbuttton";
-import { sidebarItems_report } from "../sidebarItems";
+import { sidebarItems_report, getPageTitle } from "../sidebarItems";
 
 const drawerWidth = 240;
 
@@ -44,17 +44,10 @@ export default function DrawerComponent({
   };
 
   React.useEffect(() => {
-    const getPageTitle = () => {
-      switch (location.pathname) {
-        case "/page":
-          return "Page1";
-
-        default:
-          return "";
-      }
-    };
-    const title = getPageTitle();
-    setActiveButton(title);
+    if (location.pathname) {
+      const response = getPageTitle(location.pathname);
+      setActiveButton(response);
+    }
   }, [location.pathname]);
 
   return (
@@ -82,11 +75,11 @@ export default function DrawerComponent({
       </DrawerHeader>
       <Divider />
       <Navbuttton
-        userOpen={open}
+        open={open}
         sidebarItems={sidebarItems_report()}
         handleButtonClick={handleButtonClick}
         activeButton={activeButton}
-        isDarkModes={isDarkMode}
+        isDarkMode={isDarkMode}
       />
     </Drawer>
   );

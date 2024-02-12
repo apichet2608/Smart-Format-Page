@@ -32,12 +32,20 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-export default function AppBarComponent({ open, handleDrawerOpen }) {
+export default function AppBarComponent({
+  open,
+  handleDrawerOpen,
+  isDarkMode,
+}) {
   const location = useLocation();
   const response = getPageTitle(location.pathname);
 
   return (
-    <AppBar position="fixed" open={open}>
+    <AppBar
+      position="fixed"
+      open={open}
+      sx={{ bgcolor: isDarkMode ? "#1d232a" : "#fff" }}
+    >
       <Toolbar>
         <IconButton
           color="inherit"
