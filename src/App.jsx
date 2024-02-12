@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import { useTheme } from "../src/Components/common/Theme/ThemeContext/ThemeContext"; // Import the custom hook from ThemeContex
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 import AppBarComponent from "./Components/common/Appbar/AppBarComponent";
-import DrawerComponent from "./Components/common/Appbar/Drawer_Persistent/DrawerComponent";
-import MainContent from "./Components/common/Appbar/Drawer_Persistent/MainContent";
+import DrawerComponent from "./Components/common/Appbar/Drawer_mini/DrawerComponent";
+import MainContent from "./Components/common/Appbar/Drawer_mini/MainContent";
 // Drawer_Persistent;
 // Drawer_mini;
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box style={{ display: "flex" }}>
         <AppBarComponent
           open={open}
           handleDrawerOpen={handleDrawerOpen}

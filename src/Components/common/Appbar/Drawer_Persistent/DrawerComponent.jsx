@@ -82,11 +82,11 @@ export default function DrawerComponent({
       </DrawerHeader>
       <Divider />
       <Navbuttton
-        open={open}
+        userOpen={open}
         sidebarItems={sidebarItems_report()}
         handleButtonClick={handleButtonClick}
         activeButton={activeButton}
-        isDarkMode={isDarkMode}
+        isDarkModes={isDarkMode}
       />
     </Drawer>
   );
