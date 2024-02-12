@@ -27,12 +27,12 @@ body {
   padding: 0;
 }
 
+input {
+  background-color: var(--InputBgcolor-color-theme);
+}
+
 .Paper_Contents {
   background-color: var(--PaperBg-color-theme);
   margin: 1px;
   padding: 4px;
-}
-
-input {
-  background-color: var(--Input-color-theme);
 }
