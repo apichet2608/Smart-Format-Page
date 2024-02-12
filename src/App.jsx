@@ -1,20 +1,37 @@
 import { useState } from "react";
 import "./App.css";
-
-import Appbar from "./Components/common/Appbar/Appbar";
-
+import { useTheme } from "../src/Components/common/Theme/ThemeContext/ThemeContext"; // Import the custom hook from ThemeContex
+import Box from "@mui/material/Box";
+import AppBarComponent from "./Components/common/Appbar/AppBarComponent";
+import DrawerComponent from "./Components/common/Appbar/Drawer_Persistent/DrawerComponent";
+import MainContent from "./Components/common/Appbar/Drawer_Persistent/MainContent";
+// Drawer_Persistent;
+// Drawer_mini;
 function App() {
+  const { isDarkMode } = useTheme(); // Use the isDarkMode function from Context
+  const [open, setOpen] = useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      <div className="">
-        <Appbar />
-        <h1 className="text-3xl flex justify-center underline-offset-8 bg-blue-50 w-full text-black">
-          Hello world!
-        </h1>
-      </div>
-      <div className="Paper_Contents">
-        <input type="text" placeholder="123" />
-      </div>
+      <Box sx={{ display: "flex" }}>
+        <AppBarComponent
+          open={open}
+          handleDrawerOpen={handleDrawerOpen}
+          isDarkMode={isDarkMode}
+        />
+        <DrawerComponent
+          open={open}
+          handleDrawerClose={handleDrawerClose}
+          isDarkMode={isDarkMode}
+        />
+        <MainContent open={open} />
+      </Box>
     </>
   );
 }
