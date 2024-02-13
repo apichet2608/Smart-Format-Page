@@ -63,9 +63,7 @@ export default {
     },
     container: {
       padding: {
-        DEFAULT: "1rem",
-        xl: "2rem",
-        "2xl": "2rem",
+        DEFAULT: "0.5rem",
       },
     },
     fontFamily: {

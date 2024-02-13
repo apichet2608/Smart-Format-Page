@@ -6,7 +6,7 @@ function RouteComponents() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<No1 />} />
+        <Route path="/1" element={<No1 />} />
       </Routes>
     </>
   );
