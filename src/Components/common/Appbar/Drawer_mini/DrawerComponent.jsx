@@ -9,6 +9,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { NavLink, useLocation } from "react-router-dom";
 import Navbuttton from "../Button/Navbuttton";
 import { sidebarItems_report, getPageTitle } from "../sidebarItems";
+import FujiLogo from "../../../../../public/Pic/Fuji.png";
 
 const drawerWidth = 240;
 
@@ -84,6 +85,18 @@ export default function DrawerComponent({
     <div>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
+          <img
+            src={FujiLogo}
+            alt="คำอธิบายภาพ"
+            style={{
+              width: 180,
+              height: 45,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              objectFit: "contain",
+            }}
+          />
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -99,6 +112,7 @@ export default function DrawerComponent({
           handleButtonClick={handleButtonClick}
           activeButton={activeButton}
           isDarkMode={isDarkMode}
+          title={"Report"}
         />
       </Drawer>
     </div>

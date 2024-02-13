@@ -1,11 +1,11 @@
 // src/routes/pageRoutes.js หรือ src/utils/pageRoutes.js
 
-import HomeIcon from "@mui/icons-material/Home";
-import ReportIcon from "@mui/icons-material/Report";
+import Dashboard1 from "../../../../public/Icon/Common/icons8-dashboard-96.png";
+import Dashboard2 from "../../../../public/Icon/Common/icons8-dashboard-layout-96.png";
 
 const pageRoutes = [
-  { path: "/1", title: "1", icon: HomeIcon },
-  { path: "/2", title: "2", icon: HomeIcon },
+  { path: "/1", title: "Name Page 1", icon: Dashboard1 },
+  { path: "/2", title: "Name Page 2", icon: Dashboard2 },
 ];
 
 export default pageRoutes;

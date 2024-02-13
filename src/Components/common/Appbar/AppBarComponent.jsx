@@ -44,7 +44,7 @@ export default function AppBarComponent({
     <AppBar
       position="fixed"
       open={open}
-      sx={{ bgcolor: isDarkMode ? "#1d232a" : "#fff" }}
+      // sx={{ bgcolor: isDarkMode ? "#1d232a" : "#fff" }}
     >
       <Toolbar>
         <IconButton

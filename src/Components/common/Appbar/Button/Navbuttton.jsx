@@ -8,6 +8,7 @@ function NavButton({
   activeButton,
   handleButtonClick,
   isDarkMode,
+  title,
 }) {
   return (
     <div>
@@ -23,7 +24,7 @@ function NavButton({
               lineHeight: "20px",
             }}
           >
-            Title
+            {title}
           </div>
         </ListItem>
       )}
