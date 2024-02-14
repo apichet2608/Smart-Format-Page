@@ -44,19 +44,26 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
+})(({ theme, open, isDarkMode }) => ({
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
-  ...(open && {
-    ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme),
-  }),
-  ...(!open && {
-    ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme),
-  }),
+  ...(open
+    ? {
+        ...openedMixin(theme),
+        "& .MuiDrawer-paper": {
+          ...openedMixin(theme),
+          backgroundColor: isDarkMode ? "#28243d" : "#f4f5fa",
+        },
+      }
+    : {
+        ...closedMixin(theme),
+        "& .MuiDrawer-paper": {
+          ...closedMixin(theme),
+          backgroundColor: isDarkMode ? "#28243d" : "#f4f5fa",
+        },
+      }),
 }));
 
 export default function DrawerComponent({
@@ -83,7 +90,17 @@ export default function DrawerComponent({
 
   return (
     <div>
-      <Drawer variant="permanent" open={open}>
+      <Drawer
+        isDarkMode={isDarkMode}
+        variant="permanent"
+        open={open}
+        theme={theme}
+        // sx={{
+        // "& .MuiDrawer-paper": {
+        //   backgroundColor: isDarkMode ? "#fafafa" : "#fafafa",
+        // },
+        // }}
+      >
         <DrawerHeader>
           <img
             src={FujiLogo}

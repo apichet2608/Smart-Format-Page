@@ -44,7 +44,7 @@ export default function AppBarComponent({
     <AppBar
       position="fixed"
       open={open}
-      // sx={{ bgcolor: isDarkMode ? "#1d232a" : "#fff" }}
+      sx={{ bgcolor: isDarkMode ? "#28243d" : "#f4f5fa" }}
     >
       <Toolbar>
         <IconButton
@@ -53,6 +53,7 @@ export default function AppBarComponent({
           onClick={handleDrawerOpen}
           edge="start"
           sx={{
+            color: "black",
             marginRight: 5,
             ...(open && { display: "none" }),
           }}
@@ -61,7 +62,7 @@ export default function AppBarComponent({
         </IconButton>
         <div className="flex gap-2 w-full justify-between">
           <div className=" justify-start my-auto">
-            <div className=" text-xl">{response}</div>
+            <div className=" text-xl text-black font-semibold">{response}</div>
           </div>
           <div className=" justify-end">
             <ToggleThemeButton />

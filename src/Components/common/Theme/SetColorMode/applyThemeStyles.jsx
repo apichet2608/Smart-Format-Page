@@ -1,7 +1,7 @@
 // applyThemeStyles.js
 // Function for setting dark and light mode styles
 export function applyThemeStyles(isDarkMode) {
-  const backgroundColor = isDarkMode ? "#1d232a" : "#fff";
+  const backgroundColor = isDarkMode ? "#28243d" : "#f4f5fa";
   const textColor = isDarkMode ? "#fff" : "#1d232a";
   const bgPaperContent = isDarkMode ? "#2a323c" : "#fafafa";
   const inputBgColor = isDarkMode ? "#2a323c" : "#fafafa";
