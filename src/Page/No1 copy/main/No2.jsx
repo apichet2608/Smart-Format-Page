@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import Components1 from "../Components/Components1/Components1";
 function No1() {
   const theme = createTheme({
     breakpoints: {
@@ -13,12 +13,16 @@ function No1() {
       },
     },
   });
+
+  const handlesampleClick = () => {
+    console.log("Done");
+    alert("Done");
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className="container mx-auto">
-        <div className="Paper_Contents w-full p-2 animate__animated animate__fadeIn">
-          TEST01
-        </div>
+        <Components1 handleClick={handlesampleClick} />
       </div>
     </ThemeProvider>
   );
