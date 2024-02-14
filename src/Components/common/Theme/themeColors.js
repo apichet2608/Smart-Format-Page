@@ -18,6 +18,9 @@ const darkTheme = {
     color: "#fff",
     buttonActive: "#313131",
   },
+  Paper: {
+    backgroundColor: "#525252",
+  },
 };
 
 const lightTheme = {
@@ -36,6 +39,9 @@ const lightTheme = {
     borderRight: "2px dashed #ddd",
     color: "#1d232a",
     buttonActive: "#A0E9FF",
+  },
+  Paper: {
+    backgroundColor: "#525252",
   },
 };
 
