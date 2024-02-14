@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import No1 from "./Page/No1/main/No1";
-import No2 from "./Page/No1/main/No2";
+import No2 from "./Page/No2/main/No2";
 
 function RouteComponents() {
   return (
