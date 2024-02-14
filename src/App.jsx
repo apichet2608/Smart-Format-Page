@@ -1,49 +1,50 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import { useTheme } from "../src/Components/common/Theme/ThemeContext/ThemeContext"; // Import the custom hook from ThemeContex
-// import { Box } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { useTheme } from "./Components/common/Theme/ThemeContext/ThemeContext";
 import AppBarComponent from "./Components/common/Appbar/AppBarComponent";
 import DrawerComponent from "./Components/common/Appbar/Drawer_mini/DrawerComponent";
 import MainContent from "./Components/common/Appbar/Drawer_mini/MainContent";
-import useMediaQuery from "@mui/material/useMediaQuery";
-// Drawer_Persistent;
-// Drawer_mini;
+import "./App.css";
+
+// Define the theme configuration outside of the component
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 640, // breakpoint xs
+      sm: 768, // breakpoint sm
+      md: 1024, // breakpoint md
+      lg: 1488, // breakpoint lg
+      xl: 1872, // breakpoint xl
+    },
+  },
+});
+
 function App() {
-  const { isDarkMode } = useTheme(); // Use the isDarkMode function from Context
+  const { isDarkMode } = useTheme(); // Use isDarkMode from ThemeContext
   const [open, setOpen] = useState(false);
-  const matches = useMediaQuery("(min-width:600px)");
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
 
   useEffect(() => {
-    if (matches) {
-      setOpen(true);
-    } else {
-      setOpen(false);
-    }
+    setOpen(matches); // setOpen based on the matches directly
   }, [matches]);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div style={{ display: "flex" }}>
         <AppBarComponent
           open={open}
-          handleDrawerOpen={handleDrawerOpen}
+          handleDrawerOpen={() => setOpen(true)}
           isDarkMode={isDarkMode}
         />
-
         <DrawerComponent
           open={open}
-          handleDrawerClose={handleDrawerClose}
+          handleDrawerClose={() => setOpen(false)}
           isDarkMode={isDarkMode}
         />
         <MainContent open={open} />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
