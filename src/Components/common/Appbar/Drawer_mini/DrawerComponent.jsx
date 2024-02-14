@@ -54,14 +54,16 @@ const Drawer = styled(MuiDrawer, {
         ...openedMixin(theme),
         "& .MuiDrawer-paper": {
           ...openedMixin(theme),
-          backgroundColor: isDarkMode ? "#28243d" : "#f4f5fa",
+          backgroundColor: "var(--Drawer-background-color-theme)",
+          borderRight: "var(--Drawer-borderRight-color-theme)",
         },
       }
     : {
         ...closedMixin(theme),
         "& .MuiDrawer-paper": {
           ...closedMixin(theme),
-          backgroundColor: isDarkMode ? "#28243d" : "#f4f5fa",
+          backgroundColor: "var(--Drawer-background-color-theme)",
+          borderRight: "var(--Drawer-borderRight-color-theme)",
         },
       }),
 }));
@@ -95,11 +97,6 @@ export default function DrawerComponent({
         variant="permanent"
         open={open}
         theme={theme}
-        // sx={{
-        // "& .MuiDrawer-paper": {
-        //   backgroundColor: isDarkMode ? "#fafafa" : "#fafafa",
-        // },
-        // }}
       >
         <DrawerHeader>
           <img

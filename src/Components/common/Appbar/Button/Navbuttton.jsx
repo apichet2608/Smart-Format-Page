@@ -17,7 +17,7 @@ function NavButton({
           <div
             style={{
               opacity: 1,
-              color: "#616161",
+              color: "var(--Drawer-color-theme)",
               fontSize: "16px",
               fontWeight: 600,
               marginBottom: "2px",
@@ -38,9 +38,7 @@ function NavButton({
                 px: 2.5,
                 bgcolor:
                   activeButton === item.name
-                    ? isDarkMode
-                      ? "#E0E4E5"
-                      : "#42a5f5"
+                    ? "var(--Drawer-buttonActive-color-theme)" // Corrected CSS variable reference
                     : "transparent",
                 m: 0.5,
                 borderRadius: "10px",
@@ -65,7 +63,7 @@ function NavButton({
               {open && (
                 <div
                   style={{
-                    color: "#616161",
+                    color: "var(--Drawer-color-theme)",
                     fontSize: "16px",
                     fontWeight: 600,
                     marginBottom: "2px",

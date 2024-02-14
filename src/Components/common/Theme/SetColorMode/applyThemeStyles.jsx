@@ -1,24 +1,52 @@
 // applyThemeStyles.js
-// Function for setting dark and light mode styles
-export function applyThemeStyles(isDarkMode) {
-  const backgroundColor = isDarkMode ? "#28243d" : "#f4f5fa";
-  const textColor = isDarkMode ? "#fff" : "#1d232a";
-  const bgPaperContent = isDarkMode ? "#2a323c" : "#fafafa";
-  const inputBgColor = isDarkMode ? "#2a323c" : "#fafafa";
+import { darkTheme, lightTheme } from "../themeColors"; // Adjust the path as necessary
 
-  // Set styles on :root (document.documentElement)
+export function applyThemeStyles(isDarkMode) {
+  const theme = isDarkMode ? darkTheme : lightTheme;
+
+  // General theme styles
   document.documentElement.style.setProperty(
     "--background-color-theme",
-    backgroundColor
+    theme.general.backgroundColor
   );
-  document.documentElement.style.setProperty("--text-color-theme", textColor);
+  document.documentElement.style.setProperty(
+    "--text-color-theme",
+    theme.general.textColor
+  );
   document.documentElement.style.setProperty(
     "--PaperBg-color-theme",
-    bgPaperContent
+    theme.general.bgPaperContent
   );
   document.documentElement.style.setProperty(
     "--InputBgcolor-color-theme",
-    inputBgColor
+    theme.general.inputBgColor
+  );
+
+  // AppBar theme styles
+  document.documentElement.style.setProperty(
+    "--Appbar-background-color-theme",
+    theme.appBar.backgroundColor
+  );
+  document.documentElement.style.setProperty(
+    "--Appbar-text-color-theme",
+    theme.appBar.color
+  );
+
+  // Drawer theme styles
+  document.documentElement.style.setProperty(
+    "--Drawer-background-color-theme",
+    theme.drawer.backgroundColor
+  );
+  document.documentElement.style.setProperty(
+    "--Drawer-borderRight-color-theme",
+    theme.drawer.borderRight
+  );
+  document.documentElement.style.setProperty(
+    "--Drawer-color-theme",
+    theme.drawer.color
+  );
+  document.documentElement.style.setProperty(
+    "--Drawer-buttonActive-color-theme",
+    theme.drawer.buttonActive
   );
 }
-// Appbar - Color - theme;

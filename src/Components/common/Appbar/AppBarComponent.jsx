@@ -3,12 +3,12 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ToggleThemeButton } from "../Theme/ToggleThemeButton/ToggleThemeButton";
 import { sidebarItems_report, getPageTitle } from "./sidebarItems";
 import { NavLink, useLocation } from "react-router-dom";
+import { darkTheme, lightTheme } from "../Theme/themeColors"; // Adjust the path as necessary
 
 const drawerWidth = 240;
 // zIndex: theme.zIndex.drawer + 1,
@@ -44,7 +44,10 @@ export default function AppBarComponent({
     <AppBar
       position="fixed"
       open={open}
-      sx={{ bgcolor: isDarkMode ? "#28243d" : "#f4f5fa" }}
+      sx={{
+        bgcolor: "var(--Appbar-background-color-theme)", // Use the CSS variable for background color
+        color: "var(--Appbar-text-color-theme)", // Use the CSS variable for text color
+      }}
     >
       <Toolbar>
         <IconButton
@@ -53,7 +56,7 @@ export default function AppBarComponent({
           onClick={handleDrawerOpen}
           edge="start"
           sx={{
-            color: "black",
+            color: "white",
             marginRight: 5,
             ...(open && { display: "none" }),
           }}
@@ -62,7 +65,7 @@ export default function AppBarComponent({
         </IconButton>
         <div className="flex gap-2 w-full justify-between">
           <div className=" justify-start my-auto">
-            <div className=" text-xl text-black font-semibold">{response}</div>
+            <div className=" text-xl font-semibold">{response}</div>
           </div>
           <div className=" justify-end">
             <ToggleThemeButton />

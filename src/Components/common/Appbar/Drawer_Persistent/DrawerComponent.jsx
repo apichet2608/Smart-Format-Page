@@ -59,6 +59,8 @@ export default function DrawerComponent({
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
+          backgroundColor: "var(--Drawer-background-color-theme)",
+          borderRight: "var(--Drawer-borderRight-color-theme)",
         },
       }}
       variant="persistent"

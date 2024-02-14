@@ -16,7 +16,9 @@ function No1() {
   return (
     <ThemeProvider theme={theme}>
       <div className="container mx-auto">
-        <div className="bg-blue-400 w-full p-2 animate__animated animate__fadeIn"></div>
+        <div className="Paper_Contents w-full p-2 animate__animated animate__fadeIn">
+          TEST01
+        </div>
       </div>
     </ThemeProvider>
   );
