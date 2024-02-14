@@ -5,6 +5,7 @@ import pageRoutes from "./pageRoutes";
 export const sidebarItems_report = () => {
   return pageRoutes.map((item) => ({
     name: item.title,
+    pageName: item.pageName,
     link: item.path,
     icon: item.icon,
   }));

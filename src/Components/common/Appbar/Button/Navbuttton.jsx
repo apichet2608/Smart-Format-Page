@@ -70,7 +70,7 @@ function NavButton({
                     lineHeight: "20px",
                   }}
                 >
-                  {item.name}
+                  {item.pageName}
                 </div>
               )}
             </ListItemButton>
