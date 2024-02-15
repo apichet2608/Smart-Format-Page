@@ -6,7 +6,7 @@ import AppBarComponent from "./Components/common/Appbar/AppBarComponent";
 import DrawerComponent from "./Components/common/Appbar/Drawer_mini/DrawerComponent";
 import MainContent from "./Components/common/Appbar/Drawer_mini/MainContent";
 import "./App.css";
-
+import Box from "@mui/material/Box";
 // Define the theme configuration outside of the component
 const theme = createTheme({
   breakpoints: {
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ display: "flex" }}>
+      <Box sx={{ display: "flex" }}>
         <AppBarComponent
           open={open}
           handleDrawerOpen={() => setOpen(true)}
@@ -43,7 +43,7 @@ function App() {
           isDarkMode={isDarkMode}
         />
         <MainContent open={open} />
-      </div>
+      </Box>
     </ThemeProvider>
   );
 }
