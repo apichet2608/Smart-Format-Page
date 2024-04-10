@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { useTheme } from "./Components/common/Theme/ThemeContext/ThemeContext";
 import AppBarComponent from "./Components/common/Appbar/AppBarComponent";
 import DrawerComponent from "./Components/common/Appbar/Drawer_mini/DrawerComponent";
 import MainContent from "./Components/common/Appbar/Drawer_mini/MainContent";
@@ -21,7 +20,6 @@ const theme = createTheme({
 });
 
 function App() {
-  const { isDarkMode } = useTheme(); // Use isDarkMode from ThemeContext
   const [open, setOpen] = useState(false);
   const matches = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -32,16 +30,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
-        <AppBarComponent
-          open={open}
-          handleDrawerOpen={() => setOpen(true)}
-          isDarkMode={isDarkMode}
-        />
-        <DrawerComponent
-          open={open}
-          handleDrawerClose={() => setOpen(false)}
-          isDarkMode={isDarkMode}
-        />
+        <AppBarComponent open={open} handleDrawerOpen={() => setOpen(true)} />
+        <DrawerComponent open={open} handleDrawerClose={() => setOpen(false)} />
         <MainContent open={open} />
       </Box>
     </ThemeProvider>

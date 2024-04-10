@@ -5,10 +5,10 @@ import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ToggleThemeButton } from "../Theme/ToggleThemeButton/ToggleThemeButton";
 import { sidebarItems_report, getPageTitle } from "./sidebarItems";
 import { NavLink, useLocation } from "react-router-dom";
-import { darkTheme, lightTheme } from "../Theme/themeColors"; // Adjust the path as necessary
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+import { useTheme } from "next-themes";
 
 const drawerWidth = 240;
 // zIndex: theme.zIndex.drawer + 1,
@@ -39,14 +39,15 @@ export default function AppBarComponent({
 }) {
   const location = useLocation();
   const response = getPageTitle(location.pathname);
+  const { resolvedTheme } = useTheme();
 
   return (
     <AppBar
       position="fixed"
       open={open}
       sx={{
-        bgcolor: "var(--Appbar-background-color-theme)", // Use the CSS variable for background color
-        color: "var(--Appbar-text-color-theme)", // Use the CSS variable for text color
+        bgcolor: resolvedTheme === "dark" ? "#0f0f0f" : "#89CFF3", // Use the CSS variable for background color
+        color: resolvedTheme === "dark" ? "#f0f0f0" : "#313131",
       }}
     >
       <Toolbar>
@@ -68,7 +69,7 @@ export default function AppBarComponent({
             <div className=" text-xl font-semibold">{response}</div>
           </div>
           <div className=" justify-end">
-            <ToggleThemeButton />
+            <ThemeSwitch />
           </div>
         </div>
       </Toolbar>

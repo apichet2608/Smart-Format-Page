@@ -55,15 +55,19 @@ export default {
       }),
     },
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1488px",
-      "2xl": "1872px", //pc dev
+      sm: "534px", // pc dev
+      md: "640px", // Tablet M9 แนวตั้ง M9-2
+      lg: "1072px", // Tablet M9 แนวนอน M9
+      xl: "1340px",
+      "2xl": "1912px", //pc dev
     },
     container: {
       padding: {
         DEFAULT: "0.5rem",
+        md: "1rem",
+        lg: "1rem",
+        xl: "1rem",
+        "2xl": "1rem",
       },
     },
     fontFamily: {
@@ -71,12 +75,13 @@ export default {
       // customFont: ['"Custom Font"', "sans-serif"],
       Poppins: ['"Poppins"', "sans-serif"],
       PressStart2P: ['"Press Start 2P"', "sans-serif"],
+      Inter: ['"Inter Variable"', "sans-serif"],
     },
   },
-  // plugins: [],
+  darkMode: "class",
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    themes: ["light", "dark"],
     // darkTheme: "dark", // name of one of the included themes for dark mode
     // base: true, // applies background color and foreground color for root element by default
     // styled: true, // include daisyUI colors and design decisions for all components

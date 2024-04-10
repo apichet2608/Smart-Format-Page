@@ -1,5 +1,5 @@
 {
-  "name": "smart-format-page-02",
+  "name": "webname",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@fontsource-variable/inter": "^5.0.17",
     "@fontsource/poppins": "^5.0.8",
     "@fontsource/press-start-2p": "^5.0.18",
     "@mui/icons-material": "^5.15.10",
@@ -20,6 +21,7 @@
     "file-saver": "^2.0.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
+    "next-themes": "^0.3.0",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
