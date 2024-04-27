@@ -16,6 +16,7 @@ import "@fontsource/press-start-2p";
 import "@fontsource-variable/inter";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
