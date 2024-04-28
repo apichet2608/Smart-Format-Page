@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ListButton from "./ListButton";
-
+import Git from "../../../../public/menu-burger.svg";
 function Drawer() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,20 +19,7 @@ function Drawer() {
         />
         <div className="drawer-content">
           <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            <img src={Git} alt="git" width={24} height={24} />
           </label>
         </div>
         <div className="drawer-side">
