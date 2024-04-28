@@ -3,6 +3,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { styled, useTheme } from "@mui/material/styles";
 import RouteComponents from "../../../../Route";
+import Navbar from "../../Navbar/Navbar";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -14,9 +15,13 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function MainContent() {
   return (
-    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <DrawerHeader />
+    // <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    //   <DrawerHeader />
+    //   <RouteComponents />
+    // </Box>
+    <>
+      <Navbar />
       <RouteComponents />
-    </Box>
+    </>
   );
 }

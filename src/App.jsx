@@ -28,12 +28,15 @@ function App() {
   }, [matches]);
 
   return (
+    // <ThemeProvider theme={theme}>
+    //   {/* <Box sx={{ display: "fixed" }}> */}
+    //   {/* <AppBarComponent open={open} handleDrawerOpen={() => setOpen(true)} /> */}
+    //   {/* <DrawerComponent open={open} handleDrawerClose={() => setOpen(false)} /> */}
+    //   <MainContent open={open} />
+    //   {/* </Box> */}
+    // </ThemeProvider>
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "fixed" }}>
-        <AppBarComponent open={open} handleDrawerOpen={() => setOpen(true)} />
-        <DrawerComponent open={open} handleDrawerClose={() => setOpen(false)} />
-        <MainContent open={open} />
-      </Box>
+      <MainContent open={open} />
     </ThemeProvider>
   );
 }
