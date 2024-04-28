@@ -21,6 +21,7 @@ export default function MainContent() {
     // </Box>
     <>
       <Navbar />
+      <Box component="div" sx={{ borderBottom: "1px solid black", mb: 2 }} />
       <RouteComponents />
     </>
   );

@@ -9,7 +9,7 @@ function Drawer() {
 
   return (
     <>
-      <div className="drawer z-10">
+      <div className="drawer z-10 ">
         <input
           id="my-drawer"
           type="checkbox"
