@@ -28,7 +28,7 @@ function Content() {
         renderInput={(params) => (
           <TextField
             {...params}
-            label="Movie"
+            label="Autocomplete"
             sx={{
               "& .MuiInputBase-root": {
                 color: "var(--color-base-100)",
