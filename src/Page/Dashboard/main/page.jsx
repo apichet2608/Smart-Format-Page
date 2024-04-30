@@ -16,7 +16,7 @@ export default page;
 
 function Content() {
   return (
-    <>
+    <div className=" rounded-xl bg-base-100 p-2">
       <Autocomplete
         disablePortal
         id="combo-box-demo"
@@ -28,6 +28,7 @@ function Content() {
         renderInput={(params) => (
           <TextField
             {...params}
+            variant="standard"
             label="Autocomplete"
             sx={{
               "& .MuiInputBase-root": {
@@ -40,7 +41,7 @@ function Content() {
           />
         )}
       />
-    </>
+    </div>
   );
 }
 
