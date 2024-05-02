@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ListButton from "./ListButton";
-import Git from "../../../../public/menu-burger.svg";
+import BurgerButton from "../../../../public/menu-burger.svg";
 function Drawer() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,13 +13,16 @@ function Drawer() {
         <input
           id="my-drawer"
           type="checkbox"
-          className="drawer-toggle"
+          className="drawer-toggle "
           checked={isOpen}
           onChange={toggleDrawer}
         />
         <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
-            <img src={Git} alt="git" width={24} height={24} />
+          <label
+            htmlFor="my-drawer"
+            className="btn btn-square btn-ghost bg-base-200"
+          >
+            <img src={BurgerButton} alt="BurgerButton" width={24} height={24} />
           </label>
         </div>
         <div className="drawer-side">

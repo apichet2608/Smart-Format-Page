@@ -1,54 +1,123 @@
 import React from "react";
 import Content1 from "./Content1";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
+import AutoCompleteMUI from "../Components/AutoComplete/AutoCompleteMUI";
+import TextFieldMUI from "../Components/TextFieldMUI/TextFieldMUI";
+import DateMUI from "../Components/DateTimeMUI/DateMUI";
+import TableDataMUI from "../Components/TableDataMUI/TableDataMUI";
 function page() {
+  const data = [
+    {
+      id: 1,
+      name: "John Doe",
+      age: 25,
+      email: "",
+    },
+    {
+      id: 2,
+      name: "Jane Doe",
+      age: 35,
+      email: "",
+    },
+    {
+      id: 3,
+      name: "John Doe",
+      age: 25,
+      email: "",
+    },
+    {
+      id: 4,
+      name: "Jane Doe",
+      age: 35,
+      email: "",
+    },
+    {
+      id: 5,
+      name: "John Doe",
+      age: 25,
+      email: "",
+    },
+    {
+      id: 6,
+      name: "Jane Doe",
+      age: 35,
+      email: "",
+    },
+    {
+      id: 7,
+      name: "John Doe",
+      age: 25,
+      email: "",
+    },
+    {
+      id: 8,
+      name: "Jane Doe",
+      age: 35,
+      email: "",
+    },
+    {
+      id: 9,
+      name: "John Doe",
+      age: 25,
+      email: "",
+    },
+    {
+      id: 10,
+      name: "Jane Doe",
+      age: 35,
+      email: "",
+    },
+  ];
+
+  const column = [
+    { field: "id", headerName: "ID", width: 90 },
+    {
+      field: "name",
+      headerName: "Name",
+      width: 150,
+      editable: true,
+    },
+    {
+      field: "age",
+      headerName: "Age",
+      width: 110,
+      editable: true,
+    },
+    {
+      field: "email",
+      headerName: "Email",
+      width: 150,
+      flex: 1,
+      editable: true,
+    },
+  ];
+
   return (
     <>
       <div className="container mx-auto">
-        <Content1 title="Title 1" content={<Content />} />
+        <Content1
+          title="Input Components"
+          content={
+            <>
+              <AutoCompleteMUI />
+              <TextFieldMUI />
+              <DateMUI />
+            </>
+          }
+        />
+      </div>
+      <div className="mt-2"></div>
+      <div className="container mx-auto">
+        <Content1
+          title="Table Components"
+          content={
+            <>
+              <TableDataMUI datas={data} columns={column} />
+            </>
+          }
+        />
       </div>
     </>
   );
 }
 
 export default page;
-
-function Content() {
-  return (
-    <div className=" rounded-xl bg-base-100 p-2">
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo"
-        options={top100Films}
-        className="bg-base-100"
-        sx={{
-          width: "100%",
-        }}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            variant="standard"
-            label="Autocomplete"
-            sx={{
-              "& .MuiInputBase-root": {
-                color: "var(--color-base-100)",
-              },
-              "& .MuiInputLabel-root": {
-                color: "var(--color-base-100)",
-              },
-            }}
-          />
-        )}
-      />
-    </div>
-  );
-}
-
-const top100Films = [
-  { label: "The Shawshank Redemption", year: 1994 },
-  { label: "The Godfather", year: 1972 },
-  { label: "Snatch", year: 2000 },
-  { label: "3 Idiots", year: 2009 },
-  { label: "Monty Python and the Holy Grail", year: 1975 },
-];

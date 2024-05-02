@@ -17,6 +17,7 @@
     "@fontsource/press-start-2p": "^5.0.18",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
+    "@mui/x-data-grid": "^7.3.1",
     "axios": "^1.6.7",
     "file-saver": "^2.0.5",
     "localforage": "^1.10.0",
@@ -25,6 +26,7 @@
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.22.0",
     "sort-by": "^1.2.0",
     "xlsx": "^0.18.5"
