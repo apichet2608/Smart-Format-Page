@@ -14,7 +14,10 @@ function ListButton({ closeDrawer }) {
       <ListItem
         iconPaths={[{ img: DashboardIcon }]}
         title="Dashboard"
-        links={[{ path: "/dashboard", label: "Dashboard" }]}
+        links={[
+          { path: "/dashboard", label: "Dashboard" },
+          { path: "/dashboard2", label: "Dashboard2" },
+        ]}
         closeDrawer={closeDrawer}
       />
       <ListItem

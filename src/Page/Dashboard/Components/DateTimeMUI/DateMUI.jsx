@@ -13,10 +13,10 @@ function DateMUI() {
           value={"2021-10-01"}
           sx={{
             "& .MuiInputBase-root": {
-              color: "var(--color-base-100)",
+              color: "oklch(var(--bc))",
             },
             "& .MuiInputLabel-root": {
-              color: "var(--color-base-100)",
+              color: "oklch(var(--bc))",
             },
             width: "100%",
           }}

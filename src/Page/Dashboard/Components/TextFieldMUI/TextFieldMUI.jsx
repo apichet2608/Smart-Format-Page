@@ -12,10 +12,10 @@ function TextFieldMUI() {
           label="TextField"
           sx={{
             "& .MuiInputBase-root": {
-              color: "var(--color-base-100)",
+              color: "oklch(var(--bc))",
             },
             "& .MuiInputLabel-root": {
-              color: "var(--color-base-100)",
+              color: "oklch(var(--bc))",
             },
             width: "100%",
           }}

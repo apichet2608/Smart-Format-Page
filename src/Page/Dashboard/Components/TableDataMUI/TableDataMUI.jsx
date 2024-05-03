@@ -103,25 +103,24 @@ function TableDataMUI({ datas, columns }) {
         sx={{
           backgroundColor: "oklch(var(--b1))",
           color: "oklch(var(--bc))",
-          border: "1px solid oklch(var(--bc))",
           fontWeight: "bold",
           "& .MuiDataGrid-cell": {
             fontFamily: "'Inter Variable' , 'sans-serif'",
-            border: "1px solid oklch(var(--bc))",
+            borderRight: "1px solid oklch(var(--b3))",
+            borderTop: "1px solid oklch(var(--b3))",
           },
           "& .MuiDataGrid-columnHeader": {
             alignItems: "center",
             justifyContent: "center",
             bgcolor: "oklch(var(--b1))",
-            border: "1px solid oklch(var(--bc))",
+            borderRight: "1px solid oklch(var(--b3))",
+            borderTop: "1px solid oklch(var(--b3))",
           },
           "& .MuiDataGrid-columnHeaderTitle": {
             fontWeight: "bold",
             fontFamily: "'Inter Variable' , 'sans-serif'",
           },
           "& .MuiDataGrid-toolbarContainer": {
-            // bgcolor: "oklch(var(--b1))",
-            borderTop: "1px solid oklch(var(--bc))",
             fontFamily: "'Inter Variable' , 'sans-serif'",
           },
           "& .MuiDataGrid-scrollbar": {
@@ -131,7 +130,6 @@ function TableDataMUI({ datas, columns }) {
           " & .MuiDataGrid-footerContainer": {
             fontFamily: "'Inter Variable' , 'sans-serif'",
             bgcolor: "oklch(var(--b1))",
-            border: "1px solid oklch(var(--bc))",
           },
           " & .MuiTablePagination-root": {
             color: "oklch(var(--bc))",
@@ -169,15 +167,7 @@ function TableDataMUI({ datas, columns }) {
             bgcolor: "oklch(var(--b2))",
             fontWeight: "bold",
             fontFamily: "'Inter Variable' , 'sans-serif'",
-            border: "1px solid oklch(var(--bc))",
-          },
-          // MuiDataGrid-root
-          "& .MuiDataGrid-virtualScroller": {
-            border: "1px solid oklch(var(--bc))",
-          },
-          // MuiDataGrid-filler
-          "& .MuiDataGrid-filler": {
-            border: "1px solid oklch(var(--bc))",
+            border: "1px solid oklch(var(--b3))",
           },
         }}
       />
