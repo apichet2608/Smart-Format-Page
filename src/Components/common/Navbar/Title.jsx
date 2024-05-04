@@ -6,14 +6,8 @@ function Title() {
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/dashboard":
-        setTitle("Dashboard");
-        break;
-      case "/1":
-        setTitle("Report 1");
-        break;
-      case "/2":
-        setTitle("Report 2");
+      case "/scan_gr_r":
+        setTitle("Scan GR&R");
         break;
       default:
         setTitle("Smart Factory Dashboard");
