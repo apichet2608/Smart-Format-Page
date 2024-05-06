@@ -29,15 +29,6 @@ function ListButton({ closeDrawer }) {
         ]}
         closeDrawer={closeDrawer}
       />
-      <ListItem
-        iconPaths={[{ img: DashboardIcon }]}
-        title="Dashboard"
-        links={[
-          { path: "/smart_machine_grr_upload", label: "GR&R Upload" },
-          { path: "/smart_machine_grr_master_list", label: "Master List" },
-        ]}
-        closeDrawer={closeDrawer}
-      />
       <li></li>
     </ul>
   );
