@@ -4,7 +4,6 @@ import {
   formatDateTime,
 } from "../../../Utility/formatDate/formatDate";
 import { showAlert } from "../Components/SweetAlert/SweetAlert";
-import axios from "axios";
 import PostAPI from "../API/PostAPI";
 
 function InputZone() {
@@ -23,6 +22,7 @@ function InputZone() {
   const op_idRef = useRef(null);
   const dimensionRef = useRef(null);
   const grrRef = useRef(null);
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       // e.preventDefault();
@@ -106,31 +106,11 @@ function InputZone() {
       return;
     }
 
-    // try {
-    //   const response = await axios.post(
-    //     "http://10.17.66.242:3000/SMART-GR-R/GR-R-Scan/smt_grr_job_record/insert",
-    //     data
-    //   );
-    //   console.log("Response", response);
-    //   if (response.data.status === "OK") {
-    //     showAlert("success", "Insert Data Success", "Success");
-    //     setValues([]);
-    //     setValue_OP_ID([]);
-    //     setMccode("");
-    //     setMc_type("");
-    //     setTester_code("");
-    //     setOP_ID("");
-    //     setDimension("");
-    //     setsampling_sn("");
-    //   } else {
-    //     showAlert("error", response.data.message, "Error");
-    //   }
-    // } catch (error) {
-    //   console.log("Error", error);
-    // }
     const response = await PostAPI(
       data,
-      `http://10.17.66.242:3000/SMART-GR-R/GR-R-Scan/smt_grr_job_record/insert`
+      `${import.meta.env.VITE_IP_API}${
+        import.meta.env.VITE_Smart_GR_R_SCAN
+      }/insert`
     );
     if (response.status === "OK") {
       showAlert("success", "Insert Data Success", "success");
@@ -201,7 +181,7 @@ function InputZone() {
             ref={mc_typeRef}
           >
             <option value="">Select...</option>
-            <option value="System">System</option>
+            <option value="Syscom">Syscom</option>
             <option value="Hioki">Hioki</option>
             <option value="FCT">FCT</option>
             {/* Add more options as needed */}

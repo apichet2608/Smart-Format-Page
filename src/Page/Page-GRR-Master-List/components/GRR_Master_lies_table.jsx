@@ -1,7 +1,9 @@
 import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
+// import DateCell from "./customcolumn/DateCell/DateCell";
 
 const StyledGridOverlay = styled("div")(({ theme }) => ({
   display: "flex",
@@ -75,21 +77,20 @@ function CustomNoRowsOverlay() {
   );
 }
 
-function TableDataMUI({ datas, columns }) {
+function Table_GRR_Master_List({
+  grr_master_list_data,
+  isDarkMode,
+  refreshtable,
+  columns,
+}) {
   return (
-    <div
-      style={{
-        height: 600,
-        width: "100%",
-      }}
-    >
+    <div style={{ height: 700, width: "100%" }}>
       <DataGrid
-        server="japan"
-        rows={datas}
+        rows={grr_master_list_data}
         columns={columns}
         pageSize={5}
         disableRowSelectionOnClick
-        getRowHeight={() => "auto"}
+        rowHeight={40}
         slots={{
           toolbar: GridToolbar,
           noRowsOverlay: CustomNoRowsOverlay,
@@ -101,81 +102,31 @@ function TableDataMUI({ datas, columns }) {
           },
         }}
         sx={{
-          backgroundColor: "oklch(var(--b1))",
-          color: "oklch(var(--bc))",
-          fontWeight: "bold",
           "& .MuiDataGrid-cell": {
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-            borderRight: "1px solid oklch(var(--b3))",
-            borderTop: "1px solid oklch(var(--b3))",
+            borderRight: "1px solid #e0e0e0",
+            // borderTop: "1px solid #e0e0e0",
           },
           "& .MuiDataGrid-columnHeader": {
+            borderRight: "1px solid #e0e0e0",
+            borderTop: "1px solid #e0e0e0",
             alignItems: "center",
             justifyContent: "center",
-            bgcolor: "oklch(var(--b1))",
-            borderRight: "1px solid oklch(var(--b3))",
-            borderTop: "1px solid oklch(var(--b3))",
           },
           "& .MuiDataGrid-columnHeaderTitle": {
             fontWeight: "bold",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
+            color: "#3371ff",
+            fontSize: "14px",
+            textAlign: "center",
+            FontFace: "Poppins",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           },
-          "& .MuiDataGrid-toolbarContainer": {
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          "& .MuiDataGrid-scrollbar": {
-            backgroundColor: "oklch(var(--b))",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          " & .MuiDataGrid-footerContainer": {
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-            bgcolor: "oklch(var(--b1))",
-          },
-          " & .MuiTablePagination-root": {
-            color: "oklch(var(--bc))",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          " & .MuiSvgIcon-root ": {
-            color: "oklch(var(--bc))",
-          },
-          "& .MuiButton-text": {
-            color: "oklch(var(--bc))",
-            fontWeight: "bold",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          " & .MuiDataGrid-scrollbarFiller": {
-            backgroundColor: "oklch(var(--b1))",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          "& .MuiTablePagination-selectLabel": {
-            color: "oklch(var(--bc))",
-            fontWeight: "bold",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          "& .MuiTablePagination-displayedRows": {
-            color: "oklch(var(--bc))",
-            fontWeight: "bold",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          "& .MuiSelect-select": {
-            color: "oklch(var(--bc))",
-            fontWeight: "bold",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-          },
-          "& .MuiInputBase-root": {
-            color: "oklch(var(--bc))",
-            bgcolor: "oklch(var(--b2))",
-            fontWeight: "bold",
-            fontFamily: "'Inter Variable' , 'sans-serif'",
-            border: "1px solid oklch(var(--b3))",
-          },
-          "& .MuiDataGrid-filler": {
-            backgroundColor: "oklch(var(--b1))",
-          },
+          backgroundColor: isDarkMode ? "#fff" : "#fff",
         }}
       />
     </div>
   );
 }
 
-export default TableDataMUI;
+export default Table_GRR_Master_List;
