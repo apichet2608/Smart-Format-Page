@@ -1,10 +1,9 @@
 import React from "react";
 import Content1 from "./Content1";
-import AutoCompleteMUI from "../Components/AutoCompleteMUI/AutoCompleteMUI";
+import AutoCompleteMUI from "../Components/AutoComplete/AutoCompleteMUI";
 import TextFieldMUI from "../Components/TextFieldMUI/TextFieldMUI";
 import DateMUI from "../Components/DateTimeMUI/DateMUI";
 import TableDataMUI from "../Components/TableDataMUI/TableDataMUI";
-import DialogMUI from "../Components/DialogMUI/Dialogmui";
 function page() {
   const data = [
     {
@@ -102,7 +101,6 @@ function page() {
               <AutoCompleteMUI />
               <TextFieldMUI />
               <DateMUI />
-              <DialogMUI />
             </div>
           </div>
           <div className="col-span-12 xl:col-span-6 bg-base-200 p-8 rounded-2xl">

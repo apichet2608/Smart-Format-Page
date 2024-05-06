@@ -1,7 +1,7 @@
 import React from "react";
 
 function Dashboard2() {
-  return <div className="container mx-auto">Dashboard2</div>;
+  return <>Dashboard II</>;
 }
 
 export default Dashboard2;
