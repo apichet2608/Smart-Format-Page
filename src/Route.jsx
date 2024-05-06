@@ -1,18 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Scan_GR_R from "./Page/Scan-GR-R/main/Scan_GR_R";
-import GR_R_Upload from "./Page/Page-GRR-Upload/main/grr_upload";
-import GR_R_Master_List from "./Page/Page-GRR-Master-List/main/GRR_Master_list";
+import No1 from "./Page/No1/main/No1";
+import No2 from "./Page/No2/main/No2";
+import Dashboard from "./Page/Dashboard/main/page";
+import Dashboard2 from "./Page/Dashboard2/main/Dashboard2";
 function RouteComponents() {
   return (
     <>
       <Routes>
-        <Route path="/scan_gr_r" element={<Scan_GR_R />} />
-        <Route path="/smart_machine_grr_upload" element={<GR_R_Upload />} />
-        <Route
-          path="/smart_machine_grr_master_list"
-          element={<GR_R_Master_List />}
-        />
+        <Route path="/1" element={<No1 />} />
+        <Route path="/2" element={<No2 />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard2" element={<Dashboard2 />} />
       </Routes>
     </>
   );

@@ -6,17 +6,27 @@ import DashboardIcon from "../../../../public/Icon/Common/icons8-dashboard-96.pn
 import ReportIcon from "../../../../public/Icon/Common/report.png";
 import IOT from "../../../../public/Icon/Common/iot.png";
 import SMF from "../../../../public/Icon/Common/industry-40.png";
-import Working from "../../../../public/Icon/Common/Working.png";
-
 function ListButton({ closeDrawer }) {
   return (
     <ul className="menu px-4 py-0 w-80 min-h-full bg-base-200 text-base-content rounded-r-xl ">
       <TitleDrawer closeDrawer={closeDrawer} />
       <div className="mt-2"></div>
       <ListItem
-        iconPaths={[{ img: Working }]}
-        title="Working"
-        links={[{ path: "/scan_gr_r", label: "Scan GR&R" }]}
+        iconPaths={[{ img: DashboardIcon }]}
+        title="Dashboard"
+        links={[
+          { path: "/dashboard", label: "Dashboard" },
+          { path: "/dashboard2", label: "Dashboard2" },
+        ]}
+        closeDrawer={closeDrawer}
+      />
+      <ListItem
+        iconPaths={[{ img: ReportIcon }]}
+        title="Report"
+        links={[
+          { path: "/1", label: "Report 1" },
+          { path: "/2", label: "Report 2" },
+        ]}
         closeDrawer={closeDrawer}
       />
       <ListItem

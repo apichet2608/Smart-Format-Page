@@ -6,8 +6,14 @@ function Title() {
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/scan_gr_r":
-        setTitle("Scan GR&R");
+      case "/dashboard":
+        setTitle("Dashboard");
+        break;
+      case "/1":
+        setTitle("Report 1");
+        break;
+      case "/2":
+        setTitle("Report 2");
         break;
       case "/smart_machine_grr_upload":
         setTitle("GR&R Upload");
